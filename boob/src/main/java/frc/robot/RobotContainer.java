@@ -54,8 +54,8 @@ public class RobotContainer {
     coDriverStick.btn_1.whileHeld(shootBall);
     coDriverStick.btn_12.whenPressed(turretPresets);
     */
-    JoystickButton collectButton = new JoystickButton(driverStick.joystick, 1);
-    collectButton.whileHeld(collect);
+    JoystickButton alignButton = new JoystickButton(driverStick.joystick, 1);
+    alignButton.whileHeld(autonomousCommand);
 
   }
 

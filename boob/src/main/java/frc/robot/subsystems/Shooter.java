@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Shooter extends SubsystemBase {
 
@@ -18,8 +19,8 @@ public class Shooter extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
   public Shooter() {
-    shooterRollerL = new Talon(0);
-    shooterRollerR = new Talon(1);
+    shooterRollerL = new Talon(Constants.shooter1_port);
+    shooterRollerR = new Talon(Constants.shooter2_port);
     shooter = new MotorControllerGroup(shooterRollerL, shooterRollerR);
   }
 

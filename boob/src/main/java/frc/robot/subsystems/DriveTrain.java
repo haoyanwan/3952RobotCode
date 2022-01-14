@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class DriveTrain extends SubsystemBase {
 
@@ -21,10 +22,10 @@ public class DriveTrain extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
   public DriveTrain() {
-    frontLeftWheel = new Talon(1);
-		frontRightWheel = new Talon(2);
-		rearLeftWheel = new Talon(3);
-		rearRightWheel = new Talon(4);
+    frontLeftWheel = new Talon(Constants.frontLeftWheel_port);
+		frontRightWheel = new Talon(Constants.frontRightWheel_port);
+		rearLeftWheel = new Talon(Constants.rearLeftWheel_port);
+		rearRightWheel = new Talon(Constants.rearRightWheel_port);
     left = new MotorControllerGroup(frontLeftWheel, rearLeftWheel);
     right = new MotorControllerGroup(frontRightWheel, rearRightWheel);
     drive_train = new DifferentialDrive(left,right);

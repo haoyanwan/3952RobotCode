@@ -4,12 +4,12 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants;
 import frc.robot.subsystems.Ingester;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class CollectBalls extends CommandBase {
   private final Ingester ingest;
-  private double power;
   /**
    * Creates a new ExampleCommand.
    *
@@ -17,7 +17,6 @@ public class CollectBalls extends CommandBase {
    */
   public CollectBalls(Ingester subsystem) {
     ingest = subsystem;
-    power = 0.5;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -32,7 +31,7 @@ public class CollectBalls extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    ingest.setIngestRollerSpeed(power);
+    ingest.setIngestRollerSpeed(Constants.ingester_power);
   }
 
   // Called once the command ends or is interrupted.

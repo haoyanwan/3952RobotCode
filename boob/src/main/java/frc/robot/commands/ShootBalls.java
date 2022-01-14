@@ -4,12 +4,12 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants;
 import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class ShootBalls extends CommandBase {
   private final Shooter shooter;
-  private double power;
   /**
    * Creates a new ExampleCommand.
    *
@@ -17,7 +17,6 @@ public class ShootBalls extends CommandBase {
    */
   public ShootBalls(Shooter subsystem) {
     shooter = subsystem;
-    power = 0.5;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -31,7 +30,7 @@ public class ShootBalls extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooter.setShooterSpeed(power);
+    shooter.setShooterSpeed(Constants.shooter_power);
   }
 
   // Called once the command ends or is interrupted.

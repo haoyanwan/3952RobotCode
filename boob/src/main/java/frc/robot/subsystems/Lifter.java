@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Lifter extends SubsystemBase {
 
@@ -19,8 +20,8 @@ public class Lifter extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public Lifter() {
 
-    lifter_1 = new Talon(1);
-    lifter_2 = new Talon(0);
+    lifter_1 = new Talon(Constants.lifter1_port);
+    lifter_2 = new Talon(Constants.lifter2_port);
   }
 
 

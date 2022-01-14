@@ -2,8 +2,6 @@ package frc.robot.commands;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Limelight;
-import frc.robot.TargetInfo;
-import java.util.List;
 import frc.robot.LimelightConstants;
 
 public class AutonomousCommand extends CommandBase {
@@ -12,7 +10,6 @@ public class AutonomousCommand extends CommandBase {
      */
     private final DriveTrain drive;
     private final Limelight limelight;
-    private List<TargetInfo> targets;
 
 
 
@@ -34,13 +31,14 @@ public class AutonomousCommand extends CommandBase {
     @Override
     public void execute() {
        limelight.outputTelemetry();
-       targets = limelight.getTarget();
-       System.out.println(targets);
+       limelight.readPeriodicInputs();
+       drive.drive(0,limelight.getX());
     }
   
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
+      drive.drive(0, 0);
     }
   
     // Returns true when the command should end.
